@@ -30,9 +30,14 @@ for file in *.mp4; do ffmpeg -i "$file" -an -vcodec copy noaudio/"$file"; done
 
 In the examples below, the audio track from `input.mp4` will be saved as `output.mp3`
 
-**Single Clip**
+**Single Clip (MP3)**
 ```
 ffmpeg -i input.mp4 -ab 160k -ac 2 -ar 44100 -vn output.mp3
+```
+
+**Single Clip (M4a)**
+```
+ffmpeg -i ASOT-874.mp4 -c:a aac -b:a 160k output.m4a
 ```
 
 **Batch**
